@@ -1,8 +1,7 @@
 var express = require('express'),
-    fake = true,
+    fake = false,
     device_keyboard,
-    //hid = require('hidstream'),
-    //devices = hid.getDevices(),
+    
     FakeKeyboard = require('./test/keyboard_mock'),
     Keyboard = require('./lib/keyboard'),
     Game = require('./lib/game'),
@@ -15,6 +14,8 @@ server.listen(8081);
 if (fake) {
     device_keyboard = new FakeKeyboard();
 } else {
+    var hid = require('hidstream');
+    var devices = hid.getDevices();
     device_keyboard = new hid.device(devices[0].path);
 }
 
