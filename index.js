@@ -1,6 +1,8 @@
 var express = require('express'),
-    hid = require('hidstream'),
-    devices = hid.getDevices(),
+    fake = true,
+    device_keyboard,
+    //hid = require('hidstream'),
+    //devices = hid.getDevices(),
     FakeKeyboard = require('./test/keyboard_mock'),
     Keyboard = require('./lib/keyboard'),
     Game = require('./lib/game'),
@@ -10,17 +12,18 @@ var express = require('express'),
 
 server.listen(8081);
 
-console.log(devices);
+if (fake) {
+    device_keyboard = new FakeKeyboard();
+} else {
+    device_keyboard = new hid.device(devices[0].path);
+}
 
-var actual_keyboard = new hid.device(devices[0].path);
-//var fake = new FakeKeyboard();
-var keyboard = new Keyboard(actual_keyboard);
+var keyboard = new Keyboard(device_keyboard);
 var game = new Game(keyboard);
-
 
 app.use( '/', express.static('./static'));
 io.sockets.on('connection', function (socket) {
-    socket.emit('game', game.getGameState());
+    socket.emit('game', game.base_state);
     game.on('data', function(data){
         socket.emit('game', data);
     })
