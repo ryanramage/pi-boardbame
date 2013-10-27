@@ -8,7 +8,8 @@ var FakeKeyboard = function() {
     events.EventEmitter.call(this);
     setInterval(function(){
 
-        var how_many = Math.round(Math.random() * 5);
+        var how_many = 4; //Math.round(Math.random() * 5);
+        console.log('how_many', how_many);
         var kc = [];
         for (var i = 0; i < how_many; i++) {
             kc.push(Math.round(Math.random() * 58))

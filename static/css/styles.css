@@ -1,0 +1,215 @@
+
+body { 
+	background-color: #AAAAAA; 
+	margin-top: 100px; 
+}
+
+.board { 
+	width: 906px;
+	height: 906px; 
+	margin: 0 auto 0 auto;
+	background-color: black; 
+	position: relative; 
+}
+
+
+.x {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 101;
+}
+
+
+.ring {
+	border: solid 4px #000;
+	background-color: white;  
+	position: absolute; 
+}
+
+.ring.six { 
+	width: 900px; 
+	height: 900px;  
+}
+
+.ring.five { 
+	width: 775px; 
+	height: 775px;  
+	top: 64px;
+	left: 64px; 
+}
+
+.ring.four { 
+	width: 650px; 
+	height: 650px;  
+	top: 128px;
+	left: 128px; 
+}
+
+.ring.three { 
+	width: 525px; 
+	height: 525px;  
+	top: 192px;
+	left: 192px; 
+}
+
+.ring.two { 
+	width: 400px; 
+	height: 400px;  
+	top: 256px;
+	left: 256px; 
+}
+
+.ring.one { 
+	width: 275px; 
+	height: 275px;  
+	top: 320px;
+	left: 320px; 
+}
+
+
+.blight {
+	position: absolute;
+	z-index: 100; 
+	background-color: black; 
+}
+
+.blight.north {
+	top: 0px;
+	left: 0px;
+	height: 30px; 
+	width: 100%; 
+}
+
+.blight.north.six {
+	height: 66px; 
+}
+
+.blight.north.five {
+	height: 132px;
+}
+
+.blight.north.four {
+	height: 198px;
+}
+
+.blight.north.three {
+	height: 264px;
+}
+
+.blight.north.two {
+	height: 330px;
+}
+
+.blight.north.dead {
+	height: 400px;
+}
+
+/* Blight East */
+
+.blight.west.six {
+	width: 66px; 
+}
+
+.blight.west.five {
+	width: 132px;
+}
+
+.blight.west.four {
+	width: 198px;
+}
+
+.blight.west.three {
+	width: 264px;
+}
+
+.blight.west.two {
+	width: 330px;
+}
+
+.blight.west.dead {
+	width: 400px;
+}
+
+.blight.west {
+	top: 0px;
+	left: 0px;
+	height: 100%; 
+	width: 30px 
+}
+
+
+/* Blight East */
+
+.blight.east.six {
+	width: 66px; 
+}
+
+.blight.east.five {
+	width: 132px;
+}
+
+.blight.east.four {
+	width: 198px;
+}
+
+.blight.east.three {
+	width: 264px;
+}
+
+.blight.east.two {
+	width: 330px;
+}
+
+.blight.east.dead {
+	width: 400px;
+}
+
+
+
+/* Blight South */
+
+.blight.south.six {
+	height: 66px; 
+}
+
+.blight.south.five {
+	height: 132px;
+}
+
+.blight.south.four {
+	height: 198px;
+}
+
+.blight.south.three {
+	height: 264px;
+}
+
+.blight.south.two {
+	height: 330px;
+}
+
+.blight.south.dead {
+	height: 400px;
+}
+
+
+.blight.south {
+	bottom: 0px;
+	left: 0px;
+	height: 30px; 
+	width: 100%; 
+}
+
+.blight.east {
+	top: 0px;
+	right: 0px;
+	height: 100%; 
+	width: 30px; 
+}
+
+
+
+
+
+
