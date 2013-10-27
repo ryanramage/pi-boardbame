@@ -20,6 +20,7 @@ var game = new Game(keyboard);
 
 app.use( '/', express.static('./static'));
 io.sockets.on('connection', function (socket) {
+    socket.emit('game', game.getGameState());
     game.on('data', function(data){
         socket.emit('game', data);
     })

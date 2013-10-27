@@ -3,7 +3,7 @@ var connection = window.location.hostname;
 var socket = io.connect('http://' + connection);
 
 var players_map = ["north", "east", "south", "west"];
-var blight_map = ['seven', 'six', 'five', 'four', 'three', 'two', 'one', 'dead'];
+var blight_map = ['','seven', 'six', 'five', 'four', 'three', 'two', 'one', 'dead'];
 
 socket.on('game', function (game) {
     if (!game.players) return;
