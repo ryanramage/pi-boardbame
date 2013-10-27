@@ -7,6 +7,7 @@ var blight_map = ['','seven', 'six', 'five', 'four', 'three', 'two', 'dead'];
 
 var $scream_1 = document.getElementById('scream-1');
 var $scream_2 = $('#scream-2');
+var dead = {};
 
 socket.on('game', function (game) {
     if (!game.players) return;
@@ -14,9 +15,13 @@ socket.on('game', function (game) {
         var blight = game.players[i].blight;
         var player_class = '.' + players_map[i];
         var blight_class = blight_map[blight];
-
-        if (blight > 7) $scream_1.play();
-
+        if (blight > 6 && !dead[i]) {
+		$scream_1.play();
+		dead[i] = true;
+	}
+	if (blight <= 1 && dead[i]) {
+	    dead[i] = false;
+	}
 
         var $elem = $('.blight' + player_class);
         $elem.removeClass('one two three four five six seven dead');
