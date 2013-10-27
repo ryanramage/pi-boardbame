@@ -1,13 +1,24 @@
 
 body { 
-	background-color: #AAAAAA; 
-	margin-top: 100px; 
+	background-color: #000; 
+	margin-top: 0px; 
+}
+
+.container {
+	width: 960px; 
+	margin: 0 auto;
+}
+
+img.logo {
+	margin: 0 auto;
+	width: 660px;
+	display:block; 
 }
 
 .board { 
 	width: 906px;
 	height: 906px; 
-	margin: 0 auto 0 auto;
+	margin: 25px auto 0 auto 0;
 	background-color: black; 
 	position: relative; 
 }
@@ -67,11 +78,24 @@ body {
 	left: 320px; 
 }
 
-
 .blight {
 	position: absolute;
 	z-index: 100; 
 	background-color: black; 
+}
+
+.blight.south {
+	bottom: 0px;
+	left: 0px;
+	height: 30px; 
+	width: 100%; 
+}
+
+.blight.east {
+	top: 0px;
+	right: 0px;
+	height: 100%; 
+	width: 30px; 
 }
 
 .blight.north {
@@ -80,6 +104,17 @@ body {
 	height: 30px; 
 	width: 100%; 
 }
+
+.blight.west {
+	top: 0px;
+	left: 0px;
+	height: 100%; 
+	width: 30px 
+}
+
+
+/* North */
+
 
 .blight.north.six {
 	height: 66px; 
@@ -105,7 +140,7 @@ body {
 	height: 400px;
 }
 
-/* Blight East */
+/* Blight West */
 
 .blight.west.six {
 	width: 66px; 
@@ -129,13 +164,6 @@ body {
 
 .blight.west.dead {
 	width: 400px;
-}
-
-.blight.west {
-	top: 0px;
-	left: 0px;
-	height: 100%; 
-	width: 30px 
 }
 
 
@@ -193,23 +221,37 @@ body {
 	height: 400px;
 }
 
+/* Player indicators */
 
-.blight.south {
-	bottom: 0px;
-	left: 0px;
-	height: 30px; 
-	width: 100%; 
+.player {
+	position: absolute; 
+	z-index: 102;
+	font-size: 3em;
+	font-weight: bold;
+	padding: 0 0.25em;	
 }
 
-.blight.east {
-	top: 0px;
-	right: 0px;
-	height: 100%; 
-	width: 30px; 
+.player.north { 
+	top: -10px; 
+	left: 450px;
+	background-color: #FFFF4D;
 }
 
+.player.west {
+	top: 50%; 
+	right: -30px;
+	background-color: #4C4CFF;
+}
 
+.player.south {
+	bottom: -15px;
+	left: 450px;
+	background-color: #FF7F00; 		
+}
 
-
-
-
+.player.east {
+	left: -15px; 
+	top: 50%; 
+	color: #000;
+	background-color: #FF0000; 
+}

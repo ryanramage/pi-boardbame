@@ -7,41 +7,52 @@
 </head>
 <body>
 
-<div class="board">
+<div class="container">
+
+    <img class="logo" src="img/logo.jpg" />
+
+    <div class="board">
+
+        <!-- Card Indicators -->
+        <div class="player north">N</div>
+        <div class="player west">W</div>
+        <div class="player south">S</div>
+        <div class="player east">E</div>
+
+        <!-- Blight covers -->
+
+        <div class="blight north"></div>
+
+        <div class="blight west"></div>
+
+        <div class="blight south"></div>
+
+        <div class="blight east"></div>
 
 
-    <!-- Blight covers -->
-
-    <div class="blight north dead"></div>
-
-    <div class="blight west dead"></div>
-
-    <div class="blight south dead"></div>
-
-    <div class="blight east dead"></div>
+        <!-- The X -->
+        <div class="x"><img src="img/x.png" /></div>
 
 
-    <!-- The X -->
-    <div class="x"><img src="img/x.png" /></div>
+        <!-- Rings -->
 
+        <div class="ring six"></div>
 
-    <!-- Rings -->
+        <div class="ring five"></div>
 
-    <div class="ring six"></div>
+        <div class="ring four"></div>
 
-    <div class="ring five"></div>
+        <div class="ring three"></div>
 
-    <div class="ring four"></div>
+        <div class="ring two"></div>
 
-    <div class="ring three"></div>
+        <div class="ring one"></div>
 
-    <div class="ring two"></div>
-
-    <div class="ring one"></div>
-<!--
--->
+    <!-- /.board    -->
+    </div>
     <audio src="sounds/scream-1.wav" id="scream-1"/>
     <audio src="sounds/scream-1.wav" id="scream-2"/>
+<!-- /.container -->
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
