@@ -1,7 +1,6 @@
 var express = require('express'),
     fake = false,
     device_keyboard,
-    
     FakeKeyboard = require('./test/keyboard_mock'),
     Keyboard = require('./lib/keyboard'),
     Game = require('./lib/game'),
